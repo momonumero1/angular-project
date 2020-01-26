@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="container">
+    <button mat-button [matMenuTriggerFor]="template">Template</button>
+    <mat-menu #template="matMenu">
+      <ng-container *ngFor="let cat of categories">
+        <button mat-menu-item [matMenuTriggerFor]=category (mouseover)="onMouseOverCategory(cat)">{{cat}}</button>
+      </ng-container>
+    </mat-menu>
+    <mat-menu #category="matMenu">
+      <button *ngFor="let t of templatesFiltered" mat-menu-item (click)="onMenuTemplate(t)">{{t.name}}</button>
+    </mat-menu>
+  </div>
+  <br/>
+  <div class="container">
+    <table class="center">
+      <caption>Generation: {{generationNumber}} , Population: {{population}} </caption>
+      <tbody>
+        <tr *ngFor="let row of grid ; let r=index">
+          <td *ngFor="let col of row; let c=index"
+              (mouseover)="onToggleMouseOver(r,c,$event)"
+              (click)="onToggleClick(r,c,$event)"
+              [ngStyle]="{'background-color':getCellColor(grid[r][c])}">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+<br/>
+  <div>
+    <gol-toogle-buttons [values]="speeds"
+                        [(selectedItem)]="speed"
+                        (selectedItemChange)="onChangeAnimationSpeed()">
+                      </gol-toogle-buttons>
+  </div>
+  <div>
+    <gol-toogle-buttons [values]="colorModes"
+                        [(selectedItem)]="colorMode">
+                      </gol-toogle-buttons>
+  </div>
+  <div>
+      <label for="regle-select" >Règles: </label>
+      <select id="regle-select"
+              [(ngModel)]="selectedRuleStr"
+              [(value)]="selectedRuleStr"
+              (ngModelChange)="onRuleChangeStr()">
+        <option *ngFor="let ruleStr of rulesStr" [value]="ruleStr">
+          {{ruleStr}}
+        </option>
+      </select>
+  </div>
+  <div>
+    <gol-neon-button label="Run !" *ngIf="!running" (click)="onRunAnimation()"></gol-neon-button>
+    <gol-neon-button label="Stop !" *ngIf="running" (click)="onStopAnimation()"></gol-neon-button>
+    <gol-neon-button label="Clear board" (click)="onClearBoard()"></gol-neon-button>
+  </div>
+  <!--<div class="container">
+    <div #pixiContainer></div>
+  </div>
+-->
+</div>
+
+
+
+
+

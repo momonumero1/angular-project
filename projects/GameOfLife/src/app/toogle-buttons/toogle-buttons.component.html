@@ -1,0 +1,6 @@
+<div>
+  <gol-neon-button *ngFor="let val of values"
+                    [label]="val.name"
+                    [selected]="isCurrentValue(val)"
+                    (click)="onClickButton(val)"></gol-neon-button>
+</div>

@@ -1,0 +1,8 @@
+<form [formGroup]="myOtherForm">
+  <input type="text" (change)="onChangeValue()" formControlName="name">
+  <input type="text" (change)="onChangeValue()" formControlName="surname">
+  <input type="text" (change)="onChangeValue()" formControlName="license">
+</form>
+<button (click)="onResetForm()">Reset form</button>
+<button (click)="onReset()">Reset cache</button>
+{{ myOtherForm.value | json }}

@@ -1,0 +1,226 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "GameOfLife": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/GameOfLife",
+      "sourceRoot": "projects/GameOfLife/src",
+      "prefix": "gol",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/GameOfLife",
+            "index": "projects/GameOfLife/src/index.html",
+            "main": "projects/GameOfLife/src/main.ts",
+            "polyfills": "projects/GameOfLife/src/polyfills.ts",
+            "tsConfig": "projects/GameOfLife/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/GameOfLife/src/favicon.ico",
+              "projects/GameOfLife/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "projects/GameOfLife/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/GameOfLife/src/environments/environment.ts",
+                  "with": "projects/GameOfLife/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "GameOfLife:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "GameOfLife:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "GameOfLife:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/GameOfLife/src/test.ts",
+            "polyfills": "projects/GameOfLife/src/polyfills.ts",
+            "tsConfig": "projects/GameOfLife/tsconfig.spec.json",
+            "karmaConfig": "projects/GameOfLife/karma.conf.js",
+            "assets": [
+              "projects/GameOfLife/src/favicon.ico",
+              "projects/GameOfLife/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "projects/GameOfLife/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/GameOfLife/tsconfig.app.json",
+              "projects/GameOfLife/tsconfig.spec.json",
+              "projects/GameOfLife/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/GameOfLife/e2e/protractor.conf.js",
+            "devServerTarget": "GameOfLife:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "GameOfLife:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "formManagerTutoriel": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:component": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:module": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "projects/formManagerTutoriel",
+      "sourceRoot": "projects/formManagerTutoriel/src",
+      "prefix": "fmt",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/formManagerTutoriel",
+            "index": "projects/formManagerTutoriel/src/index.html",
+            "main": "projects/formManagerTutoriel/src/main.ts",
+            "polyfills": "projects/formManagerTutoriel/src/polyfills.ts",
+            "tsConfig": "projects/formManagerTutoriel/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/formManagerTutoriel/src/favicon.ico",
+              "projects/formManagerTutoriel/src/assets"
+            ],
+            "styles": [
+              "projects/formManagerTutoriel/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/formManagerTutoriel/src/environments/environment.ts",
+                  "with": "projects/formManagerTutoriel/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "formManagerTutoriel:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "formManagerTutoriel:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "formManagerTutoriel:build"
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "GameOfLife"
+}
