@@ -1,6 +1,7 @@
 <form [formGroup]="myForm">
   <input type="text" (change)="onChangeValue()" formControlName="name">
   <input type="text" (change)="onChangeValue()" formControlName="surname">
+  <button type="submit" [disabled]="myForm.invalid">Valider</button>
 </form>
 <button (click)="onResetForm()">Reset form</button>
 <button (click)="onReset()">Reset cache</button>
