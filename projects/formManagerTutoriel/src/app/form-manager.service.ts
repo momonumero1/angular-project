@@ -46,7 +46,7 @@ export class FormManagerService {
 
   cache(key: string, formGroup: FormGroup) {
     console.log('cache');
-    const cFG=new CustomFormGroup();
+    const cFG = new CustomFormGroup();
     cFG.setForm(formGroup);
     this.cachedFormGroups.set(key, cFG);
     console.log(this.cachedFormGroups);

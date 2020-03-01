@@ -10,12 +10,18 @@
       <button *ngFor="let t of templatesFiltered" mat-menu-item (click)="onMenuTemplate(t)">{{t.name}}</button>
     </mat-menu>
   </div>
+  <div class="container">
+    <p>TREE</p>
+    <mat-tree [dataSource]="categories">
+
+    </mat-tree>
+  </div>
   <br/>
   <div class="container">
     <table class="center">
       <caption>Generation: {{generationNumber}} , Population: {{population}} </caption>
       <tbody>
-        <tr *ngFor="let row of grid ; let r=index">
+        <tr *ngFor="let row of grid; let r=index">
           <td *ngFor="let col of row; let c=index"
               (mouseover)="onToggleMouseOver(r,c,$event)"
               (click)="onToggleClick(r,c,$event)"

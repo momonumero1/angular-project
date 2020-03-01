@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import {MatInputModule, MatSelectModule, MatFormFieldModule, MatOptionModule} from '@angular/material';
 
 
 @NgModule({
@@ -14,6 +15,9 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+
+  ],
+  exports: [
 
   ],
   providers: [],

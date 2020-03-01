@@ -24,6 +24,7 @@
               "projects/GameOfLife/src/assets"
             ],
             "styles": [
+
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "projects/GameOfLife/src/styles.css"
             ],
@@ -90,6 +91,7 @@
               "projects/GameOfLife/src/assets"
             ],
             "styles": [
+
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "projects/GameOfLife/src/styles.css"
             ],
@@ -217,6 +219,147 @@
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "formManagerTutoriel:build"
+          }
+        }
+      }
+    },
+    "MatTreeTest": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:component": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:module": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "projects/MatTreeTest",
+      "sourceRoot": "projects/MatTreeTest/src",
+      "prefix": "mtt",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/MatTreeTest",
+            "index": "projects/MatTreeTest/src/index.html",
+            "main": "projects/MatTreeTest/src/main.ts",
+            "polyfills": "projects/MatTreeTest/src/polyfills.ts",
+            "tsConfig": "projects/MatTreeTest/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/MatTreeTest/src/favicon.ico",
+              "projects/MatTreeTest/src/assets"
+            ],
+            "styles": [
+              "projects/MatTreeTest/src/styles.css"
+
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/MatTreeTest/src/environments/environment.ts",
+                  "with": "projects/MatTreeTest/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "MatTreeTest:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "MatTreeTest:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "MatTreeTest:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/MatTreeTest/src/test.ts",
+            "polyfills": "projects/MatTreeTest/src/polyfills.ts",
+            "tsConfig": "projects/MatTreeTest/tsconfig.spec.json",
+            "karmaConfig": "projects/MatTreeTest/karma.conf.js",
+            "assets": [
+              "projects/MatTreeTest/src/favicon.ico",
+              "projects/MatTreeTest/src/assets"
+            ],
+            "styles": [
+              "projects/MatTreeTest/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/MatTreeTest/tsconfig.app.json",
+              "projects/MatTreeTest/tsconfig.spec.json",
+              "projects/MatTreeTest/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/MatTreeTest/e2e/protractor.conf.js",
+            "devServerTarget": "MatTreeTest:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "MatTreeTest:serve:production"
+            }
           }
         }
       }

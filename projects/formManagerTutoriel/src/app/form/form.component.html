@@ -1,6 +1,13 @@
 <form [formGroup]="myForm">
-  <input type="text" (change)="onChangeValue()" formControlName="name">
-  <input type="text" (change)="onChangeValue()" formControlName="surname">
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <mat-select formControlName="name">
+      <mat-option *ngFor="let s of surnameList" [value]="s">
+        {{s}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <input type="text"  formControlName="surname">
   <button type="submit" [disabled]="myForm.invalid">Valider</button>
 </form>
 <button (click)="onResetForm()">Reset form</button>

@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl, FormArray, FormControl } from '@angular/forms';
 import { FormManagerService, CustomFormGroup } from '../form-manager.service';
-import { Subscription } from 'rxjs';
+import { Subscription, Observable } from 'rxjs';
 import { isUndefined } from 'util';
 
 const FORM_BUILDER_KEY = 'form1';
@@ -13,11 +13,14 @@ const FORM_BUILDER_KEY = 'form1';
 })
 export class FormComponent implements OnInit, OnDestroy {
 
-
+  surnameList = ['Momo1', 'MOmo2'];
   myForm: FormGroup;
+  myForm2: FormGroup;
   formGroupSubcription: Subscription;
   constructor(private formBuilder: FormBuilder,
               private formManager: FormManagerService) { }
+
+  timer;
 
   ngOnInit() {
     this.initForm();
@@ -25,6 +28,8 @@ export class FormComponent implements OnInit, OnDestroy {
       (fG: CustomFormGroup) => {
          if (!isUndefined(fG)) {
           this.myForm = this.cloneAbstractControl(fG.getForm());
+          this.myForm2 = this.cloneAbstractControl(fG.getForm());
+
         } else {
           this.initForm();
         }
@@ -35,12 +40,21 @@ export class FormComponent implements OnInit, OnDestroy {
     );
 
     this.formManager.getFormGroup(FORM_BUILDER_KEY);
+    this.timer = setTimeout(() => {
+      this.myForm = this.myForm2;
+      this.myForm.disable();
+    }, 2000);
+
+
+
+
+
 
   }
   initForm() {
     this.myForm = this.formBuilder.group(
       {
-        name: [null,Validators.required],
+        name: [null, Validators.required],
         surname: null
       });
   }
