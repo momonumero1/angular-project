@@ -18,7 +18,7 @@
             "main": "projects/GameOfLife/src/main.ts",
             "polyfills": "projects/GameOfLife/src/polyfills.ts",
             "tsConfig": "projects/GameOfLife/tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "projects/GameOfLife/src/favicon.ico",
               "projects/GameOfLife/src/assets"
@@ -43,7 +43,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -162,7 +161,7 @@
             "main": "projects/formManagerTutoriel/src/main.ts",
             "polyfills": "projects/formManagerTutoriel/src/polyfills.ts",
             "tsConfig": "projects/formManagerTutoriel/tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "projects/formManagerTutoriel/src/favicon.ico",
               "projects/formManagerTutoriel/src/assets"
@@ -185,7 +184,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -260,7 +258,7 @@
             "main": "projects/MatTreeTest/src/main.ts",
             "polyfills": "projects/MatTreeTest/src/polyfills.ts",
             "tsConfig": "projects/MatTreeTest/tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "projects/MatTreeTest/src/favicon.ico",
               "projects/MatTreeTest/src/assets"
@@ -284,7 +282,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
