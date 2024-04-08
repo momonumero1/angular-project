@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, AbstractControl, FormArray, FormControl } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators, AbstractControl, UntypedFormArray, UntypedFormControl } from '@angular/forms';
 import { FormManagerService, CustomFormGroup } from '../form-manager.service';
 import { Subscription, Observable } from 'rxjs';
 import { isUndefined } from 'util';
@@ -14,10 +14,10 @@ const FORM_BUILDER_KEY = 'form1';
 export class FormComponent implements OnInit, OnDestroy {
 
   surnameList = ['Momo1', 'MOmo2'];
-  myForm: FormGroup;
-  myForm2: FormGroup;
+  myForm: UntypedFormGroup;
+  myForm2: UntypedFormGroup;
   formGroupSubcription: Subscription;
-  constructor(private formBuilder: FormBuilder,
+  constructor(private formBuilder: UntypedFormBuilder,
               private formManager: FormManagerService) { }
 
   timer;
@@ -75,8 +75,8 @@ export class FormComponent implements OnInit, OnDestroy {
   cloneAbstractControl<T extends AbstractControl>(control: T): T {
     let newControl: T;
 
-    if (control instanceof FormGroup) {
-      const formGroup = new FormGroup({}, control.validator, control.asyncValidator);
+    if (control instanceof UntypedFormGroup) {
+      const formGroup = new UntypedFormGroup({}, control.validator, control.asyncValidator);
       const controls = control.controls;
 
       Object.keys(controls).forEach(key => {
@@ -84,14 +84,14 @@ export class FormComponent implements OnInit, OnDestroy {
       });
 
       newControl = formGroup as any;
-    } else if (control instanceof FormArray) {
-      const formArray = new FormArray([], control.validator, control.asyncValidator);
+    } else if (control instanceof UntypedFormArray) {
+      const formArray = new UntypedFormArray([], control.validator, control.asyncValidator);
 
       control.controls.forEach(formControl => formArray.push(this.cloneAbstractControl(formControl)));
 
       newControl = formArray as any;
-    } else if (control instanceof FormControl) {
-      newControl = new FormControl(control.value, control.validator, control.asyncValidator) as any;
+    } else if (control instanceof UntypedFormControl) {
+      newControl = new UntypedFormControl(control.value, control.validator, control.asyncValidator) as any;
     } else {
       throw new Error('Error: unexpected control value');
     }

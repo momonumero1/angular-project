@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
-import { FormBuilder, FormGroup, AbstractControl, FormArray, FormControl } from '@angular/forms';
+import { FormBuilder, UntypedFormGroup, AbstractControl, FormArray, FormControl } from '@angular/forms';
 import { Subject } from 'rxjs/internal/Subject';
 import { isUndefined } from 'util';
 import * as _ from 'lodash';
 
 
 export class CustomFormGroup {
-  private form: FormGroup;
+  private form: UntypedFormGroup;
 
-  setForm(fg: FormGroup) {
+  setForm(fg: UntypedFormGroup) {
     this.form = fg;
   }
 
-  getForm(): FormGroup {
+  getForm(): UntypedFormGroup {
     return this.form;
   }
 }
@@ -44,7 +44,7 @@ export class FormManagerService {
 
   }
 
-  cache(key: string, formGroup: FormGroup) {
+  cache(key: string, formGroup: UntypedFormGroup) {
     console.log('cache');
     const cFG = new CustomFormGroup();
     cFG.setForm(formGroup);
