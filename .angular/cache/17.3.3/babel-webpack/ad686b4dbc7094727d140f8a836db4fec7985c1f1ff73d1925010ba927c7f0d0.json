@@ -1,1 +1,0 @@
-{"ast":null,"code":"export var GameOfLifeRule = /*#__PURE__*/function (GameOfLifeRule) {\n  GameOfLifeRule[GameOfLifeRule[\"ConwayRule\"] = 0] = \"ConwayRule\";\n  GameOfLifeRule[GameOfLifeRule[\"HighLifeRule\"] = 1] = \"HighLifeRule\";\n  return GameOfLifeRule;\n}(GameOfLifeRule || {});","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}
