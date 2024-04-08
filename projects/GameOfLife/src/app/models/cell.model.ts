@@ -1,6 +1,5 @@
 import { State } from './state.enum';
 import { GameOfLifeRule, Rule } from './rules.model';
-import { MatTabLabelWrapper } from '@angular/material';
 
 export class Cell {
 

@@ -1,0 +1,1 @@
+{"ast":null,"code":"export var State = /*#__PURE__*/function (State) {\n  State[State[\"None\"] = 0] = \"None\";\n  State[State[\"ALive\"] = 1] = \"ALive\";\n  State[State[\"Size\"] = 2] = \"Size\";\n  return State;\n}(State || {});","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}

@@ -3,7 +3,6 @@ import { Cell } from '../models/cell.model';
 import { Subject } from 'rxjs/internal/Subject';
 import { State } from '../models/state.enum';
 import { TemplateBoard } from '../models/template-board.model';
-import { Template } from '@angular/compiler/src/render3/r3_ast';
 import { GameOfLifeRule, Rule } from '../models/rules.model';
 
 

@@ -20,7 +20,7 @@ import * as PIXI from 'pixi.js';
   styleUrls: ['./board.component.css']
 })
 export class BoardComponent implements OnInit, OnDestroy {
-  @ViewChild('pixiContainer', null) pixiContainer;
+  @ViewChild('pixiContainer') pixiContainer;
   pApp: any;
 
   speeds: Speed[] = [

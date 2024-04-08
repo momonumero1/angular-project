@@ -16,7 +16,9 @@
             "outputPath": "dist/GameOfLife",
             "index": "projects/GameOfLife/src/index.html",
             "main": "projects/GameOfLife/src/main.ts",
-            "polyfills": "projects/GameOfLife/src/polyfills.ts",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "projects/GameOfLife/tsconfig.app.json",
             "aot": true,
             "assets": [
@@ -82,7 +84,9 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "projects/GameOfLife/src/test.ts",
-            "polyfills": "projects/GameOfLife/src/polyfills.ts",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "projects/GameOfLife/tsconfig.spec.json",
             "karmaConfig": "projects/GameOfLife/karma.conf.js",
             "assets": [
@@ -159,7 +163,9 @@
             "outputPath": "dist/formManagerTutoriel",
             "index": "projects/formManagerTutoriel/src/index.html",
             "main": "projects/formManagerTutoriel/src/main.ts",
-            "polyfills": "projects/formManagerTutoriel/src/polyfills.ts",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "projects/formManagerTutoriel/tsconfig.app.json",
             "aot": true,
             "assets": [
@@ -256,7 +262,9 @@
             "outputPath": "dist/MatTreeTest",
             "index": "projects/MatTreeTest/src/index.html",
             "main": "projects/MatTreeTest/src/main.ts",
-            "polyfills": "projects/MatTreeTest/src/polyfills.ts",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "projects/MatTreeTest/tsconfig.app.json",
             "aot": true,
             "assets": [
@@ -321,7 +329,9 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "projects/MatTreeTest/src/test.ts",
-            "polyfills": "projects/MatTreeTest/src/polyfills.ts",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "projects/MatTreeTest/tsconfig.spec.json",
             "karmaConfig": "projects/MatTreeTest/karma.conf.js",
             "assets": [
@@ -362,5 +372,7 @@
       }
     }
   },
-  "defaultProject": "GameOfLife"
+  "cli": {
+    "analytics": false
+  }
 }
